@@ -1,4 +1,4 @@
-﻿REM =========================
+REM =========================
 REM Bat File 本身若是 UTF8 語系, 為了讓 Bat 檔裡的中文字正常顯示與讀取
 REM 必須利用 chcp 變更 Command Line 語系為 UTF8 (代碼為 65001)
 REM 否則中文字會是亂碼, 甚至造成 Java Application 執行錯誤
