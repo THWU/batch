@@ -25,6 +25,7 @@ del %CD%\Tables\*.sql
 )
 echo export Tables schema
 start "Export Tables schema" /B mssql-scripter -S "%ServerName%" -d "%DatabaseName%" -U %user% -P %password% -f %CD%\Tables\ --file-per-object --script-create --include-types Table --exclude-headers
+timeout /t 60 /nobreak
 GOTO _CreateView
 
 :_CreateView
@@ -39,6 +40,7 @@ del %CD%\Views\*.sql
 )
 echo export Views schema
 start "Export Views schema" /B mssql-scripter -S "%ServerName%" -d "%DatabaseName%" -U %user% -P %password% -f %CD%\Views\ --file-per-object --script-create --include-types View --exclude-headers
+timeout /t 10 /nobreak
 GOTO _CreateStoredProcedures
 
 :_CreateStoredProcedures
@@ -53,6 +55,8 @@ del %CD%\StoredProcedures\*.sql
 )
 echo export StoredProcedures schema
 start "Export Stored Procedures schema" /B mssql-scripter -S "%ServerName%" -d "%DatabaseName%" -U %user% -P %password% -f %CD%\StoredProcedures\ --file-per-object --script-create --include-types StoredProcedure --exclude-headers
+timeout /t 10 /nobreak
+GOTO _CreateUserDefinedFunction
 
 :_CreateUserDefinedFunction
 ::check if the UserDefinedFunctions folder exists
