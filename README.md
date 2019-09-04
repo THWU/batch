@@ -28,7 +28,7 @@
     -- /Views/  
 
 ### 注意事項
-- 執行後，**會刪除所有位於 ScriptExport.bat 目錄下 資料夾內所有檔案**
+- 執行後，**會刪除所有位於 ScriptExport.bat 目錄下，以下資料夾內所有檔案**
     - StoredProcedures
     - Tables
     - UserDefinedFunctions
